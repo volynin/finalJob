@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	_ "github.com/mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 )
 
 var db *sql.DB
@@ -13,7 +13,7 @@ var db *sql.DB
 // Инициализация базы данных
 func InitDB(dataSourceName string) error {
 	var err error
-	db, err = sql.Open("sqlite3", dataSourceName)
+	db, err = sql.Open("sqlite", dataSourceName)
 	if err != nil {
 		return err
 	}
